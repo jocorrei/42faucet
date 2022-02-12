@@ -20,9 +20,6 @@ contract Faucet {
         _to.transfer(100000000000000000); //0.1 ether
     }
 
-    function fundFaucet() public payable {
-    }
-
     function getbalance() public view returns(uint) {
         return address(this).balance;
     }
