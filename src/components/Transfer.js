@@ -18,7 +18,7 @@ const Transfer = ({connected, onClick, newAddress, setNewAddress}) => {
 				aria-label="Recipient's username" 
 				aria-describedby="button-addon2"
 				onChange={({target}) => setNewAddress (target.value)}/>
-			<button className="btn btn-primary" type="button" id="button-addon2" onClick={onClick}>Button</button>
+			<button className="btn btn-primary" type="button" id="button-addon2" onClick={onClick}>Send</button>
 		  </div>
 		  </div>
 		  <div className="text-center p-4" style={{}}>
