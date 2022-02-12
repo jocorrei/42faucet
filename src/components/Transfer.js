@@ -1,7 +1,7 @@
 import React from 'react'
 import NotConnected from './NotConnected'
 
-const Transfer = ({connected, onClick, newAddress, setNewAddress}) => {
+const Transfer = ({connected, onClick, newAddress, setNewAddress, address}) => {
 	if (!connected) {
 		return(
 			<NotConnected />
@@ -21,9 +21,12 @@ const Transfer = ({connected, onClick, newAddress, setNewAddress}) => {
 			<button className="btn btn-primary" type="button" id="button-addon2" onClick={onClick}>Send</button>
 		  </div>
 		  </div>
-		  <div className="text-center p-4" style={{}}>
-			  Make sure you are connected to the Ropstein Testnet
-        </div>
+		  <div className="text-center p-4">
+			  Make sure you are connected to your localhost
+       	 </div>
+			<div className="text-center p-4">
+			  Contract Address:  {address}
+       	 </div>
 		  </div>
 		)
 	}

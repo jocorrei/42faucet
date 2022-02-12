@@ -25,7 +25,9 @@ function App() {
     await provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
     const signerAccount = await signer.getAddress()
-    setAccount(signerAccount)
+    const initial = signerAccount.substring(0, 4)
+    const final = signerAccount.substring(39)
+    setAccount(`${initial}...${final}`)
     setConnection(true)
     console.log("Account:", signerAccount);
 
@@ -72,7 +74,7 @@ useEffect(() => {
     <div className="App">
         <NavBar connected={connected} onClick={requestAccount} address={account}/>
         <Balance balance={contractBalance}/>
-        <Transfer connected={connected} onClick={handleTransfer} newAddress={newAddress} setNewAddress={setNewAddress}/>
+        <Transfer connected={connected} onClick={handleTransfer} newAddress={newAddress} setNewAddress={setNewAddress} address={contractAddress}/>
         <Footer />
     </div>
   );
