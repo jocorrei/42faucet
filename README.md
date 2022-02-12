@@ -6,6 +6,7 @@ Dapp that sends ETH to the conected account on a ethereum testnet
 
 If you want to test this aplication, clone the repository and run the following:
 
+* Make sure that you have Node.js installed on you machine
 * `npm install` to install all the dependencies (hardhat, bootswatch, react-app...)
 * `npx hardhat node` to run an ethereum node on your machine
 * `npx hardhat compile` to compile the smart contract
