@@ -15,11 +15,18 @@ async function main() {
 
   // We get the contract to deploy
   const Faucet = await hre.ethers.getContractFactory("Faucet");
+  const Token = await hre.ethers.getContractFactory("myERC20");
   const faucet = await Faucet.deploy("0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266");
-
   await faucet.deployed();
 
-  console.log("Greeter deployed to:", faucet.address);
+  const token = await Token.deploy("42Chains", "FTT", faucet.address, 30)
+  await token.deployed();
+  
+
+  console.log("Faucet deployed to:", faucet.address);
+  console.log("Token deployed to:", token.address);
+
+  await faucet.setToken(token.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

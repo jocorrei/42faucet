@@ -66,7 +66,7 @@ contract myERC20 {
     constructor (string memory name_, string memory symbol_, address owner, uint256 supply) {
         _name = name_;
         _symbol = symbol_;
-        _decimals = 18;
+        _decimals = 2;
         _totalSupply = supply;
         _owner = owner;
     }
@@ -79,6 +79,10 @@ contract myERC20 {
 
     function totalSupply() external view returns (uint256) {
         return (_totalSupply);
+    }
+
+    function totalAvailable() external view returns (uint256) {
+        return (_totalSupply - _mintedTokens);
     }
 
     function balanceOf(address who) external view returns (uint256) {
@@ -117,7 +121,6 @@ contract myERC20 {
   }
 
   function mintFromFaucet(address to, uint amount) external returns (bool) {
-      require(msg.sender == _owner, "Must be contract owner to mint new tokens.");
       require(_mint(to, amount) == true, "Not able to mint new tokens.");
       emit Transfer(msg.sender, to, amount);
       return (true);
@@ -125,6 +128,7 @@ contract myERC20 {
 
   function _mint(address to, uint256 amount) internal returns (bool) {
       require(_totalSupply - _mintedTokens >= amount, "Amount cannot be minted due to total supply restrictions.");
+      require(msg.sender == _owner, "Not allowed");
       _mintedTokens += amount;
       balances[to] += amount;
       return (true);

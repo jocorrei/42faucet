@@ -1,7 +1,7 @@
 import React from 'react'
 import NotConnected from './NotConnected'
 
-const Transfer = ({connected, onClick, newAddress, setNewAddress, address}) => {
+const Transfer = ({connected, onClick, newAddress, setNewAddress, address, tokenAddress}) => {
 	if (!connected) {
 		return(
 			<NotConnected />
@@ -10,7 +10,7 @@ const Transfer = ({connected, onClick, newAddress, setNewAddress, address}) => {
 		return (
 			<div>
 			<div className="d-flex justify-content-center">
-			<div className="input-group mb-3" style={{ maxWidth: '40rem', marginTop: 20}}>
+			<div className="input-group mb-3" style={{ maxWidth: '40rem', marginTop: 60}}>
 			<input type="text" 
 				className="form-control" 
 				placeholder="Recipient's address"
@@ -26,7 +26,10 @@ const Transfer = ({connected, onClick, newAddress, setNewAddress, address}) => {
        	 </div>
 			<div className="text-center p-4">
 			  Contract Address:  {address}
-       	 </div>
+			</div>
+			<div className="text-center p-4">
+			  Token	Address:  {tokenAddress}
+			</div>
 		  </div>
 		)
 	}
