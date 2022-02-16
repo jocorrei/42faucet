@@ -21,7 +21,3 @@ If you want to test this aplication, clone the repository and run the following:
 * Send ETH to the contract (the contract address is the returned value on you terminal when you runned `npx hardhat run scripts/deploy.js --network localhost`).
 * Copy another address created when you runned `npx hardhat node` and use the Dapp to send ETH to this address (paste this address on the input field and click on "Send").
 * The account connected to the Dapp will pay for the transaction gas and the other account will receive 0.1 ET. The account that payed for the gas will receive a token minted by us. If you want, you can import these accounts on you metamask to make sure that one account received ETH and the other one received FTT(our token).(Reminder: You will have to import the FTT token to your metamask)
-
-# Upcoming updates
-
-The idea is that people could use this Dapp to interact with a contract that sends free ETH to the address provided. The account that trigged the contract (the one that payed for the gas fees) would receive a 42Chain token minted by us. This funcionality is still not implemented, but it will as soon as possible
