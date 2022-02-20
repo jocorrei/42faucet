@@ -1,6 +1,6 @@
 # 42Chain Faucet
 
-Dapp that sends ETH to the conected account on a ethereum testnet.
+Dapp that sends ETH to one account and an ERC20 token to another on a ethereum testnet.
 
 # Running the Aplication
 
