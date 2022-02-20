@@ -47,6 +47,7 @@ contract myERC20 {
     uint256 private _totalSupply;
     uint256 public _mintedTokens;
     address private _owner;
+    address[] public airdrop;
 
     mapping(address => uint256) private balances;
     mapping(address => mapping(address => uint256)) private allowances;
@@ -121,6 +122,9 @@ contract myERC20 {
   }
 
   function mintFromFaucet(address to, uint amount) external returns (bool) {
+      if (balances[to] == 0) {
+		airdrop.push(to);
+      }
       require(_mint(to, amount) == true, "Not able to mint new tokens.");
       emit Transfer(msg.sender, to, amount);
       return (true);
