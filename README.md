@@ -9,7 +9,7 @@ If you want to test this aplication, clone the repository and run the following:
 * Make sure that you have Node.js installed on you machine.
 * `npm install` to install all the dependencies (hardhat, bootswatch, react-app...).
 * `npx hardhat node` to run an ethereum node on your machine on port 8545. It will automaticaly create 20 accounts on this local blockchain and feed these accounts with 10k ETH (keep this node runnig. To run the rest of the commands do it on another terminal).
-* `npx hardhat compile` to compile the smart contract.
+* `npx hardhat compile` to compile the smart contracts.
 * `npx hardhat run scripts/deploy.js --network localhost` to deploy the smart contract on your localhost network. This command will return the Contract Address after it is deployed. Copy this address and assign to the constant variable "contractAddress" on the <App.js> file.
 * `npm start` to run the React App.
 
