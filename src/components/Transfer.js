@@ -24,7 +24,7 @@ const Transfer = ({connected, onClick, newAddress, setNewAddress, address, token
 		  </div>
 		  </div>
 		  <div className="text-center p-4">
-			  Make sure you are connected to your localhost
+			  Make sure you are connected to Ropstein network
        	 </div>
 			<div className="text-center p-4">
 			  Contract Address:  {address}

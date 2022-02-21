@@ -8,9 +8,10 @@ import NavBar from './components/NavBar';
 import Balance from './components/Balance';
 import Transfer from './components/Transfer';
 import Footer from './components/Footer';
+import MediaQuery from 'react-responsive'
 
-const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
-const tokenAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+const contractAddress = "0x2c17593fb2f2Ee9677A52346Eb036f9D472e1579"
+const tokenAddress = "0x9F43f6C1BC596B8Fe90d4dE72a797a6A0a9D34fd"
 
 function App() {
   
@@ -93,7 +94,9 @@ useEffect(() => {
         <NavBar connected={connected} onClick={requestAccount} address={account}/>
         <Balance balance={contractBalance} tokenBalance={tokenBalance}/>
         <Transfer connected={connected} onClick={handleTransfer} newAddress={newAddress} setNewAddress={setNewAddress} address={contractAddress} tokenAddress={tokenAddress}/>
+        <MediaQuery minWidth={1224}>
         <Footer />
+        </MediaQuery>
     </div>
   );
 }
